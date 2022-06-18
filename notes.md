@@ -51,6 +51,29 @@ function sum(a, b) {
 ```bash
 npm install supertest
 ```
+2. Create `/__tests__/server.tests.js` with the following
+```js
+// mock out Sequelize
+const sequelize = jest.mock('sequelize');
+
+const app = require('../server.js');
+const request = require('supertest');
+
+describe('server', () => {
+  it('responds with welcome message', async () => {
+    await request(app)
+      .get('/')
+      .expect(200)
+      .then((response) => {
+        expect(response.body.message).toBe('Welcome to bezkoder application.');
+      });
+  });
+});
+
+```
+3. Run `npm test`. All tests should pass.
+
 
 # Documentation
-- https://jestjs.io/docs/expect
+- [Jest](https://jestjs.io/docs/expect)
+- [Supertest](https://github.com/visionmedia/supertest#example)
