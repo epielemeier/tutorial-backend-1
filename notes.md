@@ -1,4 +1,9 @@
-Follow steps from https://jestjs.io/docs/getting-started
+# Automated Testing
+
+
+## Set up first tests
+
+These steps are adapted from https://jestjs.io/docs/getting-started
 1. Install Jest
 ```bash
 npm install jest
@@ -39,3 +44,13 @@ function sum(a, b) {
 }
 ```
 9. Run`npm test`. All 3 tests should pass.
+
+
+## Set up controller tests
+1. Install supertest
+```bash
+npm install supertest
+```
+
+# Documentation
+- https://jestjs.io/docs/expect
