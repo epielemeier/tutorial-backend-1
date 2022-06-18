@@ -24,7 +24,7 @@ test('throws an error for hello + 1', () => {
   expect(() => sum('hello', 1))).toThrowError('hello is not a number!');
 });
 ```
-  - Notice the extra function inside of expect. This is necessary to test exceptions.
+  - Notice the extra function inside of expect. This is necessary to [test thrown errors](https://jestjs.io/docs/expect#tothrowerror).
 7. Run `npm test`. The 2 new tests should fail.
 8. Update `sum.js`:
 ```js
