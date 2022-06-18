@@ -25,4 +25,17 @@ test('throws an error for hello + 1', () => {
 });
 ```
   - Notice the extra function inside of expect. This is necessary to test exceptions.
-7. Run `npm test`. The new tests should fail.
+7. Run `npm test`. The 2 new tests should fail.
+8. Update `sum.js`:
+```js
+function sum(a, b) {
+  if (typeof(a) !== 'number') {
+    throw a + ' is not a number!'
+  }
+  if (typeof(b) !== 'number') {
+    throw b + ' is not a number!'
+  }
+  return a + b;
+}
+```
+9. Run`npm test`. All 3 tests should pass.
