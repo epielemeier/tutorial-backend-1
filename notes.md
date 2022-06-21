@@ -144,6 +144,7 @@ describe('tutorials controller', () => {
 });
 ```
 5. Run `npm test`. All tests should pass.
+6. With the documentation below and the examples so far write additional tests for the tutorials controller. All tests should pass when you are complete.
 
 # Documentation
 - [Jest Expectations](https://jestjs.io/docs/expect)
