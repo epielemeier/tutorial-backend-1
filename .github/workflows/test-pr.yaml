@@ -3,6 +3,7 @@ name: RUN UNIT TESTS
 on:
     pull_request:
         branches:
+            - master
             - dev
 
 jobs:
