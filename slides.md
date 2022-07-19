@@ -57,7 +57,7 @@ Acceptance Criteria + Application = Pass or Fail
 ### Unit test
 
 ### Integration test
-- End-to-end test
+##### End-to-end test
 
 ---
 
@@ -65,6 +65,33 @@ Acceptance Criteria + Application = Pass or Fail
 
 - Unit tests: frequently (CI/CD)
 - Integration tests: sometimes less frequently
+
+---
+
+## Github Actions
+
+```yaml
+name: RUN UNIT TESTS
+
+on:
+    pull_request:
+        branches:
+            - master
+            - dev
+
+jobs:
+    jest-unit-test:
+    # from https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v2
+          - uses: actions/setup-node@v3
+            with:
+              node-version: 16.x
+          - run: npm install
+          - run: npm run build --if-present
+          - run: npm test
+```
 
 ---
 
@@ -77,8 +104,9 @@ Acceptance Criteria + Application = Pass or Fail
 ---
 
 # Demo
-- https://github.com/epielemeier/tutorial-backend-1/tree/jest-unit-tests
-- https://github.com/epielemeier/tutorial-frontend-1/tree/cypress-integration-tests
+- https://github.com/dbnorth/tutorial-backend-1/tree/jest-unit-tests
+- https://github.com/dbnorth/tutorial-frontend-1/tree/cypress-integration-tests
+- https://github.com/epielemeier/tutorial-backend-1/pull/1
 ---
 
-Presented via https://play.presenta.cc/view/yiVG6vofZ1etv
+Presented via https://play.presenta.cc/view/Of7EOSLCZYe7h
